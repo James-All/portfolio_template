@@ -1,0 +1,17 @@
+
+@include mediaMd{
+  #side-bar{
+    display:none;
+  }
+
+  #main-page{
+    margin-left:0;
+    
+    #main-header{
+      .hamburger,
+      .small-profile{
+        display:inline-block;
+      }
+    }
+  }
+}
