@@ -1,5 +1,10 @@
 
 @include mediaMd{
+
+  body{
+    width:100%;
+  }
+
   #side-bar{
     display:none;
   }
@@ -14,4 +19,54 @@
       }
     }
   }
+}
+
+
+@include mediaSm{
+
+  #main-page{
+    .main-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+  }
+}
+
+
+
+@include mediaXs{
+
+  #main-page{
+    .main-grid{
+      width:100%;
+      grid-template-columns: 1fr;
+      grid-auto-rows:300px;
+    }
+
+    .page-change{
+
+          i,
+          button{
+              padding:.5rem;
+              margin:0 .2rem;
+              cursor:pointer;
+          }
+  }
+
+    .about{
+      height:600px;
+      width:100%;
+
+      &-images{
+          display:block;
+
+          .images-left,
+          .images-right{
+              display:block;
+              height:50%;
+          }    
+      }
+    }
+  }
+
+
 }

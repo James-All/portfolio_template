@@ -21,16 +21,16 @@ a{
 body{
     background: $bg-main;
     font-family:'Roboto', Arial, Helvetica, sans-serif;
-    min-width:100vw;
-    min-height:100vh;
-    max-width:1600px;
+    width:calc(100% - 250px);
 }
 
 #main-page{
     margin-left:250px;
+    width:100%;
 
     #main-header{
         min-height:100px;
+        margin-bottom: 2rem;
 
         .hamburger{
             display:none;
@@ -84,8 +84,82 @@ body{
         background:lighten($bg-dark, 20);
     }
   }
+
+  .main-grid{
+      display:grid;
+      grid-gap:1rem;
+      width:95%;
+      margin:0 auto 2rem auto;
+      grid-template-columns:repeat(3, 1fr);
+      grid-auto-rows: 400px;
+
+      &-item{
+          width:100%;
+
+            .project-image{
+              width:100%;
+              height:50%;
+
+                 img{
+                  width:100%;
+                  height:100%;
+              }
+          }
+
+          &-content{
+              line-height: 1.5rem;
+              padding:1rem;
+              background:$bg-light;
+              height:50%;
+
+              h3{
+                  margin-bottom:1rem;
+              }
+          }
+      }
 }
 
+    .page-change{
+        text-align:center;
+        margin-bottom:2rem;
+
+            i,
+            button{
+                padding:1rem;
+                margin:0 1rem;
+                cursor:pointer;
+            }
+    }
+
+    .about{
+        width:95%;
+        margin:auto;
+        height:400px;
+
+        &-images{
+            width:100%;
+            height:100%;
+            display:flex; 
+            flex-wrap:nowrap;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .images-left,
+            .images-right{
+                flex-basis:49.5%;
+                // display:inline-block;
+                // width:49%;
+                // height:100%;
+                // margin-left:.5rem;
+
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+            }    
+        }
+    }
+}
 
 #side-bar{
     position: fixed;
@@ -129,7 +203,6 @@ body{
             }
         }
         
-
         .side-bar-headings{
             padding-bottom:1rem;
         }
