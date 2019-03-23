@@ -91,14 +91,14 @@ body{
       width:95%;
       margin:0 auto 2rem auto;
       grid-template-columns:repeat(3, 1fr);
-      grid-auto-rows: 400px;
+      grid-auto-rows: min-content;
 
       &-item{
           width:100%;
 
             .project-image{
               width:100%;
-              height:50%;
+              height:300px;
 
                  img{
                   width:100%;
@@ -110,10 +110,16 @@ body{
               line-height: 1.5rem;
               padding:1rem;
               background:$bg-light;
-              height:50%;
+              font-size:.9rem;
 
               h3{
                   margin-bottom:1rem;
+              }
+          }
+
+          &:hover{
+              img{
+                  opacity:.3;
               }
           }
       }
@@ -134,11 +140,11 @@ body{
     .about{
         width:95%;
         margin:auto;
-        height:400px;
+        min-height:min-content;
 
         &-images{
             width:100%;
-            height:100%;
+            height:300px;
             display:flex; 
             flex-wrap:nowrap;
             flex-direction: row;
@@ -158,8 +164,155 @@ body{
                     }
             }    
         }
+
+        &-content{
+            margin:2rem 0;
+            line-height:1.5rem;
+
+            h1{
+                margin-bottom:1rem;
+            }
+        }
     }
-}
+
+    .tech-skills{
+        width:95%;
+        margin:auto;
+
+        .skill{
+            margin-bottom:2rem;
+
+            h1,
+            h3{
+                margin:2rem 0;
+            }
+
+            .bar{
+                width:100%;
+                height:40px;
+                background:$bg-light;
+                position:relative;
+
+                &-percentage{
+                    text-align:center;
+                    color:#fff;
+                    z-index:100;
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%, -50%);
+                }
+
+                &-progress{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    height:100%;
+                    background:$bg-dark;
+                }
+            }
+        }
+
+        //setting progress bar widths
+
+        .skill-1{
+            .bar-progress{
+                width:80%;
+            }
+        }
+        .skill-2{
+            .bar-progress{
+                width:70%;
+            }
+        }
+        .skill-3{
+            .bar-progress{
+                width:85%;
+            }
+        }
+
+        button{
+              padding:1rem;
+              color:#fff;
+              background:$bg-dark;
+              border:none;
+              outline:none;
+              cursor:pointer;
+              width:200px;
+
+              i{
+                  padding-right:1rem;
+                  font-size:1.3rem;
+              }
+            }
+        }
+
+        #pricing{
+            width:95%;
+            margin:0 auto 2rem auto;
+
+            h1{
+                margin:2rem 0;
+            }
+
+                .package-container{
+                    width:100%;
+                    margin:auto;
+                    display:flex;
+                    justify-content:space-between;
+
+                .package{
+                    flex-basis:31%;
+                    text-align: center;
+                    border:1px solid $bg-dark;
+                    opacity:.6;
+
+                    &:hover{
+                        opacity:1;
+                    }
+
+                    
+                    ul{
+                        list-style:none;
+
+                        li{
+                            background:$bg-light;
+                            border-bottom:1px solid $bg-dark;
+                            padding:1rem;
+
+                            &.title,
+                            &.price,
+                            &.signup{
+                                padding:2rem;
+                            }
+
+                            &.signup{
+                                background:$bg-main;
+                                border-bottom: none;
+
+                                button{
+                                    padding:1rem;
+                                    background:#009688;
+                                    border:none;
+                                    cursor:pointer;
+                                    outline:none;
+                                    color:$bg-light;
+                                    width:70%;
+                                }
+                            }
+
+                            &.title{
+                                background:$bg-dark;
+                                color:$bg-light;
+                                font-size:1.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 #side-bar{
     position: fixed;
@@ -191,7 +344,7 @@ body{
         }
 
         .profile-img{
-            width:200px;
+            width:150px;
             height:150px;
             padding:1rem 0;
     

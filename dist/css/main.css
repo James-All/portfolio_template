@@ -62,12 +62,12 @@ body {
     width: 95%;
     margin: 0 auto 2rem auto;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 400px; }
+    grid-auto-rows: min-content; }
     #main-page .main-grid-item {
       width: 100%; }
       #main-page .main-grid-item .project-image {
         width: 100%;
-        height: 50%; }
+        height: 300px; }
         #main-page .main-grid-item .project-image img {
           width: 100%;
           height: 100%; }
@@ -75,9 +75,11 @@ body {
         line-height: 1.5rem;
         padding: 1rem;
         background: #fff;
-        height: 50%; }
+        font-size: .9rem; }
         #main-page .main-grid-item-content h3 {
           margin-bottom: 1rem; }
+      #main-page .main-grid-item:hover img {
+        opacity: .3; }
   #main-page .page-change {
     text-align: center;
     margin-bottom: 2rem; }
@@ -89,10 +91,10 @@ body {
   #main-page .about {
     width: 95%;
     margin: auto;
-    height: 400px; }
+    min-height: min-content; }
     #main-page .about-images {
       width: 100%;
-      height: 100%;
+      height: 300px;
       display: flex;
       flex-wrap: nowrap;
       flex-direction: row;
@@ -104,6 +106,95 @@ body {
         #main-page .about-images .images-right img {
           width: 100%;
           height: 100%; }
+    #main-page .about-content {
+      margin: 2rem 0;
+      line-height: 1.5rem; }
+      #main-page .about-content h1 {
+        margin-bottom: 1rem; }
+  #main-page .tech-skills {
+    width: 95%;
+    margin: auto; }
+    #main-page .tech-skills .skill {
+      margin-bottom: 2rem; }
+      #main-page .tech-skills .skill h1,
+      #main-page .tech-skills .skill h3 {
+        margin: 2rem 0; }
+      #main-page .tech-skills .skill .bar {
+        width: 100%;
+        height: 40px;
+        background: #fff;
+        position: relative; }
+        #main-page .tech-skills .skill .bar-percentage {
+          text-align: center;
+          color: #fff;
+          z-index: 100;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+        #main-page .tech-skills .skill .bar-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: #333; }
+    #main-page .tech-skills .skill-1 .bar-progress {
+      width: 80%; }
+    #main-page .tech-skills .skill-2 .bar-progress {
+      width: 70%; }
+    #main-page .tech-skills .skill-3 .bar-progress {
+      width: 85%; }
+    #main-page .tech-skills button {
+      padding: 1rem;
+      color: #fff;
+      background: #333;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: 200px; }
+      #main-page .tech-skills button i {
+        padding-right: 1rem;
+        font-size: 1.3rem; }
+  #main-page #pricing {
+    width: 95%;
+    margin: 0 auto 2rem auto; }
+    #main-page #pricing h1 {
+      margin: 2rem 0; }
+    #main-page #pricing .package-container {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between; }
+      #main-page #pricing .package-container .package {
+        flex-basis: 31%;
+        text-align: center;
+        border: 1px solid #333;
+        opacity: .6; }
+        #main-page #pricing .package-container .package:hover {
+          opacity: 1; }
+        #main-page #pricing .package-container .package ul {
+          list-style: none; }
+          #main-page #pricing .package-container .package ul li {
+            background: #fff;
+            border-bottom: 1px solid #333;
+            padding: 1rem; }
+            #main-page #pricing .package-container .package ul li.title, #main-page #pricing .package-container .package ul li.price, #main-page #pricing .package-container .package ul li.signup {
+              padding: 2rem; }
+            #main-page #pricing .package-container .package ul li.signup {
+              background: #efefef;
+              border-bottom: none; }
+              #main-page #pricing .package-container .package ul li.signup button {
+                padding: 1rem;
+                background: #009688;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                width: 70%; }
+            #main-page #pricing .package-container .package ul li.title {
+              background: #333;
+              color: #fff;
+              font-size: 1.4rem; }
 
 #side-bar {
   position: fixed;
@@ -126,7 +217,7 @@ body {
     font-size: 3rem;
     visibility: hidden; }
   #side-bar .profile-img {
-    width: 200px;
+    width: 150px;
     height: 150px;
     padding: 1rem 0; }
     #side-bar .profile-img img {
@@ -160,20 +251,22 @@ body {
 
 @media screen and (max-width: 600px) {
   #main-page .main-grid {
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 300px; }
+    grid-template-columns: 1fr; }
+    #main-page .main-grid-item .project-image img {
+      object-fit: cover; }
   #main-page .page-change i,
   #main-page .page-change button {
     padding: .5rem;
     margin: 0 .2rem;
     cursor: pointer; }
   #main-page .about {
-    height: 600px;
-    width: 100%; }
+    height: 500px; }
     #main-page .about-images {
       display: block; }
       #main-page .about-images .images-left,
       #main-page .about-images .images-right {
         display: block;
-        height: 50%; } }
+        height: 50%; }
+        #main-page .about-images .images-left img,
+        #main-page .about-images .images-right img {
+          object-fit: cover; } }

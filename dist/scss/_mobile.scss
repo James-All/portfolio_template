@@ -37,10 +37,16 @@
 
   #main-page{
     .main-grid{
-      width:100%;
       grid-template-columns: 1fr;
-      grid-auto-rows:300px;
+
+      &-item{
+          .project-image{
+               img{
+                 object-fit: cover;
+            }
+        }
     }
+  }
 
     .page-change{
 
@@ -53,8 +59,7 @@
   }
 
     .about{
-      height:600px;
-      width:100%;
+      height:500px;
 
       &-images{
           display:block;
@@ -63,6 +68,10 @@
           .images-right{
               display:block;
               height:50%;
+
+              img{
+                object-fit: cover;
+              }
           }    
       }
     }
