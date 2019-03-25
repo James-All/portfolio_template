@@ -91,7 +91,6 @@ body{
       width:95%;
       margin:0 auto 2rem auto;
       grid-template-columns:repeat(3, 1fr);
-      grid-auto-rows: min-content;
 
       &-item{
           width:100%;
@@ -140,7 +139,6 @@ body{
     .about{
         width:95%;
         margin:auto;
-        min-height:min-content;
 
         &-images{
             width:100%;
@@ -247,70 +245,224 @@ body{
             }
         }
 
-        #pricing{
-            width:95%;
-            margin:0 auto 2rem auto;
+    #pricing{
+        width:95%;
+        margin:0 auto 2rem auto;
 
-            h1{
-                margin:2rem 0;
+        h1{
+            margin:2rem 0;
+        }
+
+        .package-container{
+            width:100%;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+
+        .package{
+            flex-basis:31%;
+            text-align: center;
+            border:1px solid $bg-dark;
+            opacity:.6;
+
+            &:hover{
+                opacity:1;
             }
 
-                .package-container{
-                    width:100%;
-                    margin:auto;
-                    display:flex;
-                    justify-content:space-between;
+            
+            ul{
+                list-style:none;
 
-                .package{
-                    flex-basis:31%;
-                    text-align: center;
-                    border:1px solid $bg-dark;
-                    opacity:.6;
+                li{
+                    background:$bg-light;
+                    border-bottom:1px solid $bg-dark;
+                    padding:1rem;
 
-                    &:hover{
-                        opacity:1;
+                    &.title,
+                    &.price,
+                    &.signup{
+                        padding:2rem;
                     }
 
-                    
-                    ul{
-                        list-style:none;
+                    &.signup{
+                        background:$bg-main;
+                        border-bottom: none;
 
-                        li{
-                            background:$bg-light;
-                            border-bottom:1px solid $bg-dark;
+                        button{
                             padding:1rem;
-
-                            &.title,
-                            &.price,
-                            &.signup{
-                                padding:2rem;
-                            }
-
-                            &.signup{
-                                background:$bg-main;
-                                border-bottom: none;
-
-                                button{
-                                    padding:1rem;
-                                    background:#009688;
-                                    border:none;
-                                    cursor:pointer;
-                                    outline:none;
-                                    color:$bg-light;
-                                    width:70%;
-                                }
-                            }
-
-                            &.title{
-                                background:$bg-dark;
-                                color:$bg-light;
-                                font-size:1.4rem;
-                            }
+                            background:#009688;
+                            border:none;
+                            cursor:pointer;
+                            outline:none;
+                            color:$bg-light;
+                            width:70%;
                         }
+                    }
+
+                    &.title{
+                        background:$bg-dark;
+                        color:$bg-light;
+                        font-size:1.4rem;
                     }
                 }
             }
         }
+        }
+    }
+
+        .contact{
+            width:100%;
+            // min-height:500px;
+            background:darken($bg-main, 20);
+            padding:2rem 0;
+            
+            &-wrapper{
+                width:95%;
+                margin:auto;                
+            
+            h1{
+                margin-bottom:2rem;
+            }
+
+            .row-wrapper{
+                display:flex;
+            
+                .contact-col{
+                    
+                    text-align:center;
+                    background:$bg-dark;
+                    padding:1rem;
+                    height:100px;
+                    flex:1;
+
+                    i{
+                        margin-bottom:1rem;
+                    }
+
+                    i,
+                    span{
+                        display:block;
+                        color:$bg-light;
+                    }
+                }
+
+                .contact-col:nth-of-type(2){
+                    background:#009688;
+                }
+            }
+
+            .hr-line{
+                width:100%;
+                background:$bg-light;
+                height:2px;
+                margin-top:2rem;
+            }
+
+            .contactForm{
+                width:100%;
+                margin-top:2rem;
+
+               label{
+                   width:100%;
+                   display:block;
+                   margin:1rem 0;
+               }
+
+               input{
+                   width:100%;
+                   padding:.5rem 0 .5rem .5rem;
+                   outline:none;
+                   border:1px solid #f4f4f4;
+               }
+
+               input[type="submit"]{
+                   margin-top:1rem;
+                   width:30%;
+                   background:$bg-dark;
+                   color:$bg-light;
+               }
+
+            }
+
+        }
+      }
+
+      .footer{
+          background:$bg-dark;
+          color:$bg-light;
+          padding:1rem;
+
+        &.clearfix:after{
+                content: "";
+                display: table;
+                clear: both;
+        }
+
+          &-wrapper{
+              width:95%;
+              margin:auto;
+
+            .footer-col{
+                float:left;
+                width:33%;
+                padding-right:1rem;
+
+                h2{
+                    padding-bottom:1rem;
+                }
+
+                span{
+                    background:$bg-main;
+                    line-height: 2;
+                    padding:.2rem;
+                    color:$bg-dark;
+
+                    &.highlight{
+                        background:#000;
+                        color:$bg-light;
+                        padding-top:.7rem;
+                    }
+                }
+            }
+
+            
+          .footer-col:nth-of-type(1) p:nth-of-type(2){
+            color:orange;
+            padding-top:.5rem;
+          }
+
+          .blogs{
+
+            ul{
+                list-style: none;
+
+                li img,p{
+                    display:inline-block;
+                    vertical-align: middle;
+                }
+  
+                img{
+                  width:80px;
+                  height:50px;
+                  padding-right:1rem;
+                  object-fit: cover;
+              }
+  
+              hr{
+                  border-top:4px solid $bg-light;
+                  border-right:none;
+                  border-bottom:none;
+                  border-left:none;
+                  margin:1rem 0;
+              }
+            }
+
+          
+          }
+
+        }
+          
+      }
     }
 
 
@@ -324,12 +476,13 @@ body{
 
          //styles to be added with JS on hamburger click
         &.slide{
-            position:absolute;
+            position:fixed;
             top:0;
             left:0;
+            bottom:0;
             min-width:50%;
-            height:100%;
             display:block;
+            z-index:100;
         }
 
         //icon to be made visible with JS when hamburger clicked
@@ -339,7 +492,7 @@ body{
                 top:50px;
                 right:50px;
                 font-size:3rem;
-                visibility:hidden;
+                visibility:visible;
             }
         }
 
