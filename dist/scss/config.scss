@@ -4,6 +4,16 @@ $bg-main:#efefef;
 $bg-light:#fff;
 $bg-dark:#333;
 
+//functions
+
+@function set-text-color($color){
+  @if (lightness($color) > 50){
+    @return #000;
+  }@else{
+    @return #fff;
+  }
+}
+
 
 //media query mixins
 
